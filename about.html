@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Developers - Runestone Ritual</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Courier+Prime&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier Prime', monospace;
+            background-color: #0a0a0a;
+            background-image: url('https://images.wallpaperscraft.com/image/single/texture_black_stone_154835_1920x1080.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 20px;
+            color: #d4af37;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3em;
+            color: #d4af37;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        header p {
+            color: #b8956a;
+            font-size: 1.1em;
+            letter-spacing: 2px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2em;
+            color: #d4af37;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            letter-spacing: 2px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .developers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .developer-card {
+            background: rgba(26, 26, 26, 0.9);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .developer-card:hover {
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .developer-rune {
+            width: 80px;
+            height: 80px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel', serif;
+            font-size: 2em;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .developer-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4em;
+            color: #d4af37;
+            margin-bottom: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .developer-role {
+            color: #b8956a;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .developer-bio {
+            color: #a0a0a0;
+            line-height: 1.6;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .cheat-sheet {
+            background: rgba(26, 26, 26, 0.95);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-left: 5px solid #d4af37;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .cheat-item {
+            background: rgba(40, 40, 40, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+
+        .cheat-code {
+            font-family: 'Courier Prime', monospace;
+            background: rgba(10, 10, 10, 0.9);
+            color: #d4af37;
+            padding: 6px 12px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 4px;
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .tip-badge {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: #d4af37;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            margin-left: 10px;
+        }
+
+        .references-list {
+            background: rgba(26, 26, 26, 0.95);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .reference-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(40, 40, 40, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 6px;
+            line-height: 1.8;
+            color: #a0a0a0;
+        }
+
+        .reference-item strong {
+            color: #d4af37;
+            display: block;
+            margin-bottom: 5px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .reference-item a {
+            color: #b8956a;
+            text-decoration: none;
+        }
+
+        .reference-item a:hover {
+            color: #d4af37;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: rgba(26, 26, 26, 0.9);
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            margin-top: 30px;
+            letter-spacing: 2px;
+        }
+
+        .back-button:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .developers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>About the Developers</h1>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">The Developers</h2>
+            <div class="developers-grid">
+                <div class="developer-card">
+                    <div class="developer-rune">AC</div>
+                    <h3 class="developer-name">Antonio Iñigo T. Cruz</h3>
+                    <p class="developer-role">Game Designer & Developer</p>
+
+                </div>
+
+                <div class="developer-card">
+                    <div class="developer-rune">CG</div>
+                    <h3 class="developer-name">Qian Christopher A. Gue</h3>
+                    <p class="developer-role">Game Designer & Developer</p>
+
+                </div>
+
+                <div class="developer-card">
+                    <div class="developer-rune">MB</div>
+                    <h3 class="developer-name">Moira L. Barson</h3>
+                    <p class="developer-role">Developer & Documentation</p>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Understanding the Feedback System</h2>
+            <div class="cheat-sheet">
+                <div class="cheat-item">
+                    <p style="margin-top: 10px; color: #d2271b; font-size: 0.9em;">
+                        Red (Incorrect): The stone is placed where it shouldn't be. Remove it and try elsewhere.
+                    </p>
+                </div>
+
+                <div class="cheat-item">
+                    <p style="margin-top: 10px; color: #0b8c38; font-size: 0.9em;">
+                        Green (Correct): You're covering the right tiles, but the shape is in the wrong position. Try
+                        moving it around or using other shapes to fill the tiles.
+
+                    </p>
+                </div>
+
+                <div class="cheat-item">
+                    <p style="margin-top: 10px; color: #d4af37; font-size: 0.9em;">
+                        Gold (Perfect): This shape is in the EXACT correct position! Don't touch it.
+                    </p>
+                </div>
+                     </div>
+                    </section> 
+                <section class="section">
+            <h2 class="section-title">Tips & Tricks</h2>
+            <div class="cheat-sheet">
+
+                <div class="cheat-item">
+                    <span style="color: #b8956a;">Start with the Biggest Shapes First</span>
+                    <p style="margin-top: 10px; color: #c1c0c0; font-size: 0.9em;">
+                        Since they have less valid positions, making them easier to place correctly. Save the smaller pieces for last because they pretty much fit everywhere.
+                    </p>
+                </div>
+
+                <div class="cheat-item">
+                    <span style="color: #b8956a;">Use Gold Pieces as Anchors</span>
+                    <p style="margin-top: 10px; color: #c1c0c0; font-size: 0.9em;">
+                        Once you get a gold piece, don’t touch it! Try to build around it using the other shapes.
+                   </p>
+                </div>
+
+                <div class="cheat-item">
+                    <span style="color: #b8956a;">Reposition Instead of Removing</span>
+                    <p style="margin-top: 10px; color: #c1c0c0; font-size: 0.9em;">
+                       Instead of dragging shapes back into the catalogue, just reposition it in the grid itself. It saves time.
+                    </p>
+                </div>
+
+                <div class="cheat-item">
+                    <span style="color: #b8956a;">Work One Piece at a Time</span>
+                    <p style="margin-top: 10px; color: #c1c0c0; font-size: 0.9em;">
+                        Don’t place all the pieces in the grid all at once! Work them one at a time.
+                    </p>
+                </div>
+
+                <div class="cheat-item">
+                    <span style="color: #b8956a;">Make Use of the Unlimited Moves</span>
+                    <p style="margin-top: 10px; color: #c1c0c0; font-size: 0.9em;">
+                       Use the larger pieces to scan the grid to give you a rough idea on what the pattern is. There is no move limit.
+                    </p>
+                </div>
+
+                <div class="cheat-item">
+                    <span style="color: #b8956a;">If All Else Fails</span>
+                    <p style="margin-top: 10px; color: #c1c0c0; font-size: 0.9em;">
+                        Just spam the piece all over the grid until you get the correct position.
+                   </p>
+                </div>
+               
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Ancient Texts & Resources</h2>
+            <div class="references-list">
+                <div class="reference-item">
+                    <strong>JavaScript Game Mechanics:</strong><br>
+                    W3Schools - JavaScript HTML Game<br>
+                    <a href="https://www.w3schools.com/graphics/game_intro.asp" target="_blank">
+                        https://www.w3schools.com/graphics/game_intro.asp
+                    </a>
+                </div>
+
+                   <div class="reference-item">
+                    <strong>Block Blast:</strong><br>
+                    Block Blast Game<br>
+                    <a href="https://blockblasts.io/" target="_blank">
+                        https://blockblasts.io/
+                    </a>
+                </div>
+
+                <div class="reference-item">
+                    <strong>Stone Texture Background:</strong><br>
+                    Wallpapers Craft - Black Stone Texture<br>
+                    <a href="https://images.wallpaperscraft.com/image/single/texture_black_stone_154835_1920x1080.jpg"
+                        target="_blank">
+                        https://images.wallpaperscraft.com/
+                    </a>
+                </div>
+
+                <div class="reference-item">
+                    <strong>Google Fonts:</strong><br>
+                    Cinzel and Courier Prime font families<br>
+                    <a href="https://fonts.google.com/" target="_blank">
+                        https://fonts.google.com/
+                    </a>
+                </div>
+
+                
+            </div>
+        </section>
+
+        <div style="text-align: center;">
+            <a href="https://tonn-scwg.github.io/cruz-gue-barson2/" class="back-button">← Return to Ritual</a>
+        </div>
+    </div>
+</body>
+
+</html>
